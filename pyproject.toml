@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "glob_tries"
+version = "1.0.0"
+description = "Utilities for efficient glob matching using tries"
+authors = ["Zack Robinson <zachary.robinson@arcesium.com>"]
+packages = [{ include = "glob_tries", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.12.0"
+black = "^23.9.1"
+mypy = "^1.5.1"
+flake8 = "^6.1.0"
+coverage = "^7.3.1"
+pytest = "^7.4.2"
+pre-commit = "^3.4.0"
+bandit = "^1.7.5"
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+[tool.black]
+line-length = 80
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+src_paths = ["src/glob_tries", "tests"]
+line_length = 80
+
+[tool.bandit]
+[tool.bandit.assert_used]
+skips = ["*/*_test.py", "*/test_*.py"]
+
+
+[tool.coverage.run]
+omit = ["tests/*", ".*"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
