@@ -1,9 +1,10 @@
 [tool.poetry]
 name = "glob_tries"
-version = "1.0.0"
+version = "1.0.1"
 description = "Utilities for efficient glob matching using tries"
 authors = ["Zack Robinson <zachary.robinson@arcesium.com>"]
 packages = [{ include = "glob_tries", from = "src" }]
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
